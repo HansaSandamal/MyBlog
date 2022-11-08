@@ -1,0 +1,16 @@
+.box{
+    background-color: rgb(58, 133, 64);
+    width: 48%;
+    margin: 10px;
+}
+.description{
+    padding: 10px;
+}
+.title{
+    margin: 5px;
+}
+
+nav{
+    margin: 5px;
+    text-align: right;
+}
