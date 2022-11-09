@@ -11,7 +11,7 @@ function Blog(props) {
       <div className="title">
         <h1>{value.title}</h1>
       </div>
-      {/* <div className="description">{value.body}</div> */}
+
       <nav>
         <Link to={"/details/" + value.id} state={{ type: value }}>
           See more

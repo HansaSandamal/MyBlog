@@ -22,4 +22,5 @@ function Details(props) {
     </div>
   );
 }
+
 export default Details;
