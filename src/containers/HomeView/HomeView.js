@@ -2,21 +2,23 @@ import React, { useEffect, useState } from "react";
 
 import Blog from "../../Components/Blog/Blog";
 import { getBlogs } from "../../actions/bloggerActions";
-import { connect, dispatch } from "react-redux";
+import { connect } from "react-redux";
 
 export function HomeView(props) {
   useEffect(() => {
-    props.getBlogs();
+    //props.getBlogs();
+    // dispatch(getBlogs());
+    mapDispatchToProps();
   }, []);
 
   return (
     <>
       <h1>My Blog</h1>
-      <div className="container">
+      {/* <div className="container">
         {props.blogs.map((value) => {
           return <Blog value={value} />;
         })}
-      </div>
+      </div> */}
     </>
   );
 }

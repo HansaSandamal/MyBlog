@@ -1,7 +1,7 @@
-import { GET_BLOGS, GET_BLOGS_SUCCESS } from "../actions/types.js";
+import { GET_BLOGS } from "../actions/types.js";
 
 const INITIAL_STATE = {
-  blogs: []
+  blogs: [],
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -9,6 +9,8 @@ export default (state = INITIAL_STATE, action) => {
     case GET_BLOGS:
       return {
         ...state,
+        blogs: action.payload.blogs,
+        //...action.payload.blogs
       };
     default:
       return state;
