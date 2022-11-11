@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import "./blog.css";
 
 function Blog(props) {
-  const { value } = props;
+  const {value}  = props;
+  //const value2 = useSelector((state) => state.blog.blogs);
 
   return (
     <div className="box">

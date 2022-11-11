@@ -1,33 +1,29 @@
 import React, { useEffect, useState } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 import Blog from "../../Components/Blog/Blog";
 import { getBlogs } from "../../actions/bloggerActions";
-import { connect } from "react-redux";
+import "./homeView.css";
 
-export function HomeView(props) {
+export function HomeView() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    //props.getBlogs();
-    // dispatch(getBlogs());
-    mapDispatchToProps();
+    dispatch(getBlogs());
   }, []);
+
+  const myBlogs = useSelector((state) => state.blog.blogs);
 
   return (
     <>
       <h1>My Blog</h1>
-      {/* <div className="container">
-        {props.blogs.map((value) => {
+      <div className="container">
+        {myBlogs.map((value) => {
           return <Blog value={value} />;
         })}
-      </div> */}
+      </div>
     </>
   );
 }
 
-const mapStateToProps = (state) => ({
-  ...state,
-});
-const mapDispatchToProps = (dispatch) => ({
-  getBlogs: (payload) => dispatch(getBlogs(payload)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView);
+export default HomeView;

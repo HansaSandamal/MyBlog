@@ -10,7 +10,6 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         blogs: action.payload.blogs,
-        //...action.payload.blogs
       };
     default:
       return state;
