@@ -3,7 +3,8 @@ import { connect, useDispatch, useSelector } from "react-redux";
 
 import Blog from "../../Components/Blog/Blog";
 import { getBlogs } from "../../actions/bloggerActions";
-import "./homeView.css";
+import { Container,Row } from "react-bootstrap";
+//import "./homeView.css";
 
 export function HomeView() {
   const dispatch = useDispatch();
@@ -16,12 +17,19 @@ export function HomeView() {
 
   return (
     <>
-      <h1>My Blog</h1>
-      <div className="container">
+     
+      <Container className="bg-black ">
+        <Row className="justify-content-md-center">
+        
+        <div class="p-3 mb-2 bg-warning text-black"><h1>My Blog</h1></div>
+        </Row>
+        <Row className="justify-content-md-center">
         {myBlogs.map((value) => {
           return <Blog value={value} />;
         })}
-      </div>
+        </Row>
+      
+      </Container>
     </>
   );
 }

@@ -1,9 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Home from "./Views/HomeView/Home";
+
 import Home from "./containers/HomeView/HomeView.js";
-import Details from "./Views/DetailView/Details";
+import Details from "./containers/DetailView/Details";
 import { Routes, Route } from "react-router";
 
 function App() {

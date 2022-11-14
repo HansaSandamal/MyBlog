@@ -1,25 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Card, Button } from "react-bootstrap";
 
-import "./blog.css";
+//import "./blog.css";
 
 function Blog(props) {
-  const {value}  = props;
+  const { value } = props;
   //const value2 = useSelector((state) => state.blog.blogs);
 
   return (
-    <div className="box">
-      <div className="title">
-        <h1>{value.title}</h1>
-      </div>
-
-      <nav>
-        <Link to={"/details/" + value.id} state={{ type: value }}>
-          See more
-        </Link>
-      </nav>
-    </div>
+    <Card style={{ width: "18rem", margin: "3px" }}>
+      <Card.Body>
+        <Card.Title>{value.title}</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="warning">
+          <Link to={"/details/" + value.id} state={{ type: value }}>
+            See more
+          </Link>
+        </Button>
+      </Card.Body>
+    </Card>
   );
 }
 
